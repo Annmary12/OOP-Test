@@ -1,12 +1,14 @@
 class Student{
-    constructor(firstname, lastname){
+    constructor(firstname, lastname, subject){
         this.firstname= firstname;
         this.lastname = lastname;
+        this.subject = ['English', 'Mathematics', 'Literature'];
     }
 
-    getName(){
+    getStudent(){
         return `Hello ${this.firstname} ${this.lastname}` ;
     }
+   
 }
 
 class ScoreCard extends Student{
@@ -21,11 +23,15 @@ class ScoreCard extends Student{
         return this. score = (this.englishScore + this.mathsScore + this.literatureScore)/3
     }
 
-    Result(){
-        super.getName();
-       return `Your scores are \n English: ${this.englishScore}\n Mathematics: ${this.mathsScore} \n Literature: ${this.literatureScore} \n Average Score:  ${this.AverageScore()}`;
+    getStudent(){
+
+       return `Hello ${this.firstname} ${this.lastname},  Your scores are  English: ${this.englishScore} Mathematics: ${this.mathsScore} Literature: ${this.literatureScore} Average Score:  ${this.AverageScore()}`;
     }
+
+   
 }
 
 const getScore = new ScoreCard('Annmary', 'Agunanna', 50, 60, 70);
-getScore.Result();
+const getName = new Student('Okafor', 'Njideka');
+ console.log(getScore.getStudent());
+ console.log(getName.getStudent());
